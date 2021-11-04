@@ -66,14 +66,10 @@ ExpiresByType application/xhtml+xml "access plus 600 seconds"
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
 
-<IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE text/javascript
-AddOutputFilterByType DEFLATE text/css
-<IfModule mod_setenvif.c>
-BrowserMatch ^Mozilla/4 gzip-only-text/html
-BrowserMatch ^Mozilla/4\.0[678] no-gzip
-BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-</IfModule>
- </IfModule>
+
+
+<ifModule mod_deflate.c>
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript application/font-woff2 image/svg+xml
+
+</ifModule>
